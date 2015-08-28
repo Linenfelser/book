@@ -6,10 +6,10 @@ for making the decision.
 
 From the class discussion, we wrote down five specific questions that are particularly interesting.
 
-* ((question))
-* ((question))
-* ((question))
-* ((question))
-* ((question))
+* Cross platform
+* Popularity
+* Community Support
+* Ease of Use
+* Number of available packages
 
 From the above list, my team chose a question, worked on it, and created a report on the next page.
