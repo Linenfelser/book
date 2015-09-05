@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Method | book</title>
+        <title>Analysis | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/tinker/report.html" />
+    <link rel="next" href="../../hackathons/classmates/report.html" />
     
     
-    <link rel="prev" href="../../hackathons/tinker/index.html" />
+    <link rel="prev" href="../../hackathons/classmates/warmup.html" />
     
 
         <!-- head:end -->
@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Fri Sep 04 2015 22:49:15 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Fri Sep 04 2015 22:49:15 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -263,7 +263,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1.1" data-path="hackathons/tinker/method.html">
+        <li class="chapter " data-level="2.1.1" data-path="hackathons/tinker/method.html">
             
                 
                     <a href="../../hackathons/tinker/method.html">
@@ -344,7 +344,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
+        <li class="chapter active" data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
             
                 
                     <a href="../../hackathons/classmates/analysis.html">
@@ -489,19 +489,74 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="method">Method</h1>
-<p>The main question is too general and too vague. As a class, we brainstormed
-and came up with a list of specific questions that are easier to tackle while useful
-for making the decision.</p>
-<p>From the class discussion, we wrote down five specific questions that are particularly interesting.</p>
-<ul>
-<li>Cross platform</li>
-<li>Popularity</li>
-<li>Community Support</li>
-<li>Ease of Use</li>
-<li>Number of available packages</li>
-</ul>
-<p>From the above list, my team chose a question, worked on it, and created a report on the next page.</p>
+                        <h1 id="analysis">Analysis</h1>
+<p>After completing the warmup exercises, your task is to do four more slightly
+more challenges analyses.</p>
+<h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
+<p><pre>
+<span class="keyword">var</span> bodies = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+<span class="keyword">var</span> food = _.map(bodies, <span class="keyword">function</span>( item){<span class="keyword">return</span> _.last(item.split(<span class="string">&apos;Food:&apos;</span>))})
+<span class="keyword">var</span> counter = <span class="number">0</span>
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;food.length; i++){
+    <span class="keyword">if</span>((food[i].match(<span class="string">&apos;Sushi&apos;</span>)) || food[i].match(<span class="string">&apos;sushi&apos;</span>)) 
+        counter++
+}
+<span class="keyword">return</span> counter
+
+</pre></p>
+<p>The answer is 5.</p>
+<h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
+<p><pre>
+<span class="keyword">var</span> python = _.filter(data.comments, <span class="keyword">function</span>(py){ <span class="keyword">return</span> _.includes(py.body, <span class="string">&quot;Python&quot;</span>); })
+<span class="keyword">var</span> bodiesPython = _.pluck(python, <span class="string">&apos;body&apos;</span>)
+
+<span class="keyword">var</span> myArray = []
+<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;bodiesPython.length; i++){
+    <span class="keyword">var</span> name = _.first(bodiesPython[i].split(<span class="string">&apos;\r\n&apos;</span>))
+    <span class="comment">//console.log(name)</span>
+    myArray.push(name)
+}
+<span class="keyword">return</span> myArray
+
+</pre></p>
+<p>Their names are Name: William Farmer,Name: Heather Witte,Name: Zach Lamb,Name: Zhili Yang,Name: John Cronk,Name: Denis Kazakov,Name: Caleb Hsu,Name: Karen Blakemore,Name: Sanketh S Shetty,Name: Andrey Shprengel.</p>
+<h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
+<p><pre>
+<span class="keyword">var</span> bodies = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+<span class="keyword">var</span> whichOne = _.map(bodies, <span class="keyword">function</span>(item){<span class="keyword">return</span> _.last(item.split(<span class="string">&apos;Language:&apos;</span>))})
+<span class="keyword">var</span> counterJava = <span class="number">0</span>
+<span class="keyword">var</span> counterScript = <span class="number">0</span>
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;whichOne.length; i++){
+    <span class="keyword">if</span>(whichOne[i].match(<span class="string">&apos;Java\r&apos;</span>) || whichOne[i].match(<span class="string">&apos;java\r&apos;</span>) || whichOne[i].match(<span class="string">&apos;JAVA\r&apos;</span>)) 
+        counterJava++
+    <span class="keyword">if</span>(whichOne[i].match(<span class="string">&apos;Javascript&apos;</span>) || whichOne[i].match(<span class="string">&apos;javascript&apos;</span>))
+        counterScript++	
+}
+<span class="keyword">if</span>(counterJava &gt; counterScript)
+    <span class="keyword">return</span> <span class="string">&apos;Java&apos;</span>
+
+<span class="keyword">if</span>(counterJava &lt; counterScript)
+    <span class="keyword">return</span> <span class="string">&apos;Javascript&apos;</span>
+<span class="keyword">else</span> <span class="keyword">return</span> <span class="string">&apos;The same&apos;</span>
+
+</pre></p>
+<p>The answer is Java.</p>
+<h2 id="who-likes-the-same-food-as-kjblakemore">Who likes the same food as <code>kjblakemore</code>?</h2>
+<p><pre>
+<span class="keyword">var</span> kjb = _.filter(_.pluck(data.comments, <span class="string">&apos;body&apos;</span>), <span class="keyword">function</span>(text){<span class="keyword">return</span> _.includes(text, <span class="string">&apos;Vegan&apos;</span>)})
+<span class="comment">//console.log(kjb)</span>
+<span class="keyword">var</span> names = _.map(kjb, <span class="keyword">function</span>(n){<span class="keyword">return</span> _.last(n.split(<span class="string">&apos;Name:&apos;</span>))})
+<span class="keyword">var</span> myArray = []
+<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;names.length; i++){
+    <span class="keyword">var</span> name = _.first(names[i].split(<span class="string">&apos;\r\n&apos;</span>))
+    myArray.push(name)
+}
+<span class="keyword">return</span> myArray
+
+
+
+</pre>
+The people who like the same food as kjblakemore are:  Karen Blakemore.</p>
 
                     
                     </section>
@@ -512,10 +567,10 @@ for making the decision.</p>
         </div>
 
         
-        <a href="../../hackathons/tinker/index.html" class="navigation navigation-prev " aria-label="Previous page: Tinker"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-prev " aria-label="Previous page: Warmup"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/tinker/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/classmates/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
