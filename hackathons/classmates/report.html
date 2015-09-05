@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Method | book</title>
+        <title>Report | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,8 @@
         
     
     
-    <link rel="next" href="../../hackathons/tinker/report.html" />
     
-    
-    <link rel="prev" href="../../hackathons/tinker/index.html" />
+    <link rel="prev" href="../../hackathons/classmates/analysis.html" />
     
 
         <!-- head:end -->
@@ -48,7 +46,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Fri Sep 04 2015 22:49:15 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Fri Sep 04 2015 22:49:15 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -263,7 +261,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.1.1" data-path="hackathons/tinker/method.html">
+        <li class="chapter " data-level="2.1.1" data-path="hackathons/tinker/method.html">
             
                 
                     <a href="../../hackathons/tinker/method.html">
@@ -359,7 +357,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.4" data-path="hackathons/classmates/report.html">
+        <li class="chapter active" data-level="2.2.4" data-path="hackathons/classmates/report.html">
             
                 
                     <a href="../../hackathons/classmates/report.html">
@@ -489,19 +487,111 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="method">Method</h1>
-<p>The main question is too general and too vague. As a class, we brainstormed
-and came up with a list of specific questions that are easier to tackle while useful
-for making the decision.</p>
-<p>From the class discussion, we wrote down five specific questions that are particularly interesting.</p>
-<ul>
-<li>Cross platform</li>
-<li>Popularity</li>
-<li>Community Support</li>
-<li>Ease of Use</li>
-<li>Number of available packages</li>
-</ul>
-<p>From the above list, my team chose a question, worked on it, and created a report on the next page.</p>
+                        <h1 id="report">Report</h1>
+<p>As a class, we brainstormed and came up with a long list of further questions we can ask based
+on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
+the following:</p>
+<h1 id="-percent-of-students-that-are-cs-majors">(Percent of students that are CS majors)</h1>
+<p><pre>
+<span class="keyword">var</span> bodies = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+<span class="keyword">var</span> cs = _.map(bodies, <span class="keyword">function</span>( item){<span class="keyword">return</span> _.last(item.split(<span class="string">&apos;Major:&apos;</span>))})
+<span class="keyword">var</span> counter = <span class="number">0</span>
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
+    <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;Computer Science&apos;</span>))
+        counter++
+}
+<span class="keyword">var</span> percent = (counter/cs.length) * <span class="number">100</span>
+<span class="keyword">return</span> percent
+
+</pre>
+61.53846153846154 % of the people are Computer Science people</p>
+<h1 id="-what-are-the-favorite-languages">(What are the favorite languages?)</h1>
+<p><pre>
+
+<span class="keyword">var</span> bodies = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
+<span class="keyword">var</span> cs = _.map(bodies, <span class="keyword">function</span>( item){<span class="keyword">return</span> _.last(item.split(<span class="string">&apos;Major:&apos;</span>))})
+<span class="keyword">var</span> pythonC = <span class="number">0</span>
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
+    <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;Python&apos;</span>))
+        pythonC++
+}<span class="comment">//return pythonC</span>
+
+<span class="keyword">var</span> javaC = <span class="number">0</span>
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
+    <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;Java&apos;</span>))
+        javaC++
+}<span class="comment">//return javaC</span>
+
+<span class="keyword">var</span> javaScriptC = <span class="number">0</span>
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
+    <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;Javascript&apos;</span>))
+        javaScriptC++
+}<span class="comment">//return javaScriptC</span>
+
+<span class="keyword">var</span> cC = <span class="number">0</span>
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
+    <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;C&apos;</span>) || cs[i].match(<span class="string">&apos;C++&apos;</span>) | cs[i].match(<span class="string">&apos;C#&apos;</span>) )
+        cC++
+}<span class="comment">//return cC</span>
+console.log(cC)
+
+
+</pre><div class="console error">SyntaxError: Invalid regular expression: /C++/: Nothing to repeat
+    at new RegExp (native)
+    at String.match (native)
+    at Object.eval (eval at <anonymous> (/Users/andrewlinenfelser/Documents/CU/BigData_CSCI_4830/book/node_modules/gitbook-plugin-bigdata/index.js:44:29), <anonymous>:27:31)
+    at Object.module.exports.blocks.lodash.process (/Users/andrewlinenfelser/Documents/CU/BigData_CSCI_4830/book/node_modules/gitbook-plugin-bigdata/index.js:48:37)
+    at null.<anonymous> (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/lib/template.js:136:21)
+    at /Users/andrewlinenfelser/.gitbook/versions/2.2.0/lib/template.js:267:29
+    at _fulfilled (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:787:54)
+    at self.promiseDispatch.done (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:816:30)
+    at Promise.promise.promiseDispatch (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:749:13)
+    at /Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:810:14</anonymous></anonymous></anonymous></div></p>
+<p>The results are: </p>
+<h1 id="-how-many-students-submitted-before-the-first-class">( How many students submitted before the first class? )</h1>
+<p><pre>
+<span class="keyword">var</span> created = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+<span class="keyword">var</span> time = _.map(created, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
+<span class="keyword">var</span> onTime = [<span class="string">&quot;2015-08-24T16:00:00Z&quot;</span>]
+<span class="keyword">var</span> onTimeSplit = _.map(onTime, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
+
+<span class="keyword">var</span> counter = <span class="number">0</span>
+<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;time.length; i++){
+    <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;time[i].length; j++){
+        <span class="keyword">if</span>(time[i][j] &lt; onTimeSplit[<span class="number">0</span>][j]){
+            <span class="comment">//console.log(&quot;ON TIME!!!!!&quot;)</span>
+            counter++
+            
+        }
+    }
+}
+<span class="comment">//console.log(counter)</span>
+<span class="keyword">return</span> counter
+
+</pre>
+8 people submitted before class</p>
+<h1 id="-how-many-students-updated-their-comments-after-class">( How many students updated their comments after class )</h1>
+<p><pre>
+<span class="keyword">var</span> created = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+<span class="keyword">var</span> time = _.map(created, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
+<span class="keyword">var</span> onTime = [<span class="string">&quot;2015-08-24T16:00:00Z&quot;</span>]
+<span class="keyword">var</span> onTimeSplit = _.map(onTime, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
+
+<span class="comment">//console.log(&quot;=====================&quot;)</span>
+<span class="comment">//console.log(onTimeSplit)</span>
+
+<span class="keyword">var</span> counter = <span class="number">0</span>
+<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;time.length; i++){
+    <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;time[i].length; j++){
+        <span class="keyword">if</span>(time[i][j] &gt; onTimeSplit[<span class="number">0</span>][j]){
+            <span class="comment">//console.log(&quot;NOT ON TIME!!!!!&quot;)</span>
+            counter++
+        }
+    }
+}
+<span class="keyword">return</span> counter
+</pre></p>
+<p>18 people updated after</p>
 
                     
                     </section>
@@ -512,10 +602,8 @@ for making the decision.</p>
         </div>
 
         
-        <a href="../../hackathons/tinker/index.html" class="navigation navigation-prev " aria-label="Previous page: Tinker"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/classmates/analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Analysis"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../hackathons/tinker/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
