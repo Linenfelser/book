@@ -46,7 +46,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Fri Sep 04 2015 22:49:15 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Mon Sep 07 2015 11:21:39 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -488,6 +488,10 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="report">Report</h1>
+<p>Tableau Visulizations: </p>
+<p><a href="https://public.tableau.com/profile/publish/ClassmatesHackathonReport3/Sheet3#!/publish-confirm" target="_blank">https://public.tableau.com/profile/publish/ClassmatesHackathonReport3/Sheet3#!/publish-confirm</a></p>
+<p><a href="https://public.tableau.com/profile/publish/ClassmatesHackathonReport2/Sheet2#!/publish-confirm" target="_blank">https://public.tableau.com/profile/publish/ClassmatesHackathonReport2/Sheet2#!/publish-confirm</a></p>
+<p><a href="https://public.tableau.com/profile/andrew.linenfelser#!/vizhome/ClassmatesHackathonReport/Sheet1" target="_blank">https://public.tableau.com/profile/andrew.linenfelser#!/vizhome/ClassmatesHackathonReport/Sheet1</a></p>
 <p>As a class, we brainstormed and came up with a long list of further questions we can ask based
 on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
 the following:</p>
@@ -514,7 +518,7 @@ the following:</p>
 <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
     <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;Python&apos;</span>))
         pythonC++
-}<span class="comment">//return pythonC</span>
+}<span class="keyword">return</span> pythonC
 
 <span class="keyword">var</span> javaC = <span class="number">0</span>
 <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
@@ -526,31 +530,22 @@ the following:</p>
 <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
     <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;Javascript&apos;</span>))
         javaScriptC++
-}<span class="comment">//return javaScriptC</span>
+}<span class="keyword">return</span> javaScriptC
 
 <span class="keyword">var</span> cC = <span class="number">0</span>
 <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
     <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;C&apos;</span>) || cs[i].match(<span class="string">&apos;C++&apos;</span>) | cs[i].match(<span class="string">&apos;C#&apos;</span>) )
         cC++
-}<span class="comment">//return cC</span>
+}<span class="keyword">return</span> cC
 console.log(cC)
 
 
-</pre><div class="console error">SyntaxError: Invalid regular expression: /C++/: Nothing to repeat
-    at new RegExp (native)
-    at String.match (native)
-    at Object.eval (eval at <anonymous> (/Users/andrewlinenfelser/Documents/CU/BigData_CSCI_4830/book/node_modules/gitbook-plugin-bigdata/index.js:44:29), <anonymous>:27:31)
-    at Object.module.exports.blocks.lodash.process (/Users/andrewlinenfelser/Documents/CU/BigData_CSCI_4830/book/node_modules/gitbook-plugin-bigdata/index.js:48:37)
-    at null.<anonymous> (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/lib/template.js:136:21)
-    at /Users/andrewlinenfelser/.gitbook/versions/2.2.0/lib/template.js:267:29
-    at _fulfilled (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:787:54)
-    at self.promiseDispatch.done (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:816:30)
-    at Promise.promise.promiseDispatch (/Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:749:13)
-    at /Users/andrewlinenfelser/.gitbook/versions/2.2.0/node_modules/q/q.js:810:14</anonymous></anonymous></anonymous></div></p>
+</pre></p>
 <p>The results are: </p>
 <h1 id="-how-many-students-submitted-before-the-first-class">( How many students submitted before the first class? )</h1>
 <p><pre>
 <span class="keyword">var</span> created = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+console.log(created)
 <span class="keyword">var</span> time = _.map(created, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
 <span class="keyword">var</span> onTime = [<span class="string">&quot;2015-08-24T16:00:00Z&quot;</span>]
 <span class="keyword">var</span> onTimeSplit = _.map(onTime, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
@@ -568,11 +563,12 @@ console.log(cC)
 <span class="comment">//console.log(counter)</span>
 <span class="keyword">return</span> counter
 
-</pre>
+</pre><div class="console"><pre>console&gt; [&quot;2015-08-20T22:39:50Z&quot;,&quot;2015-08-21T00:32:27Z&quot;,&quot;2015-08-21T21:44:26Z&quot;,&quot;2015-08-23T02:42:38Z&quot;,&quot;2015-08-23T15:16:45Z&quot;,&quot;2015-08-24T02:41:03Z&quot;,&quot;2015-08-24T04:58:06Z&quot;,&quot;2015-08-24T15:09:50Z&quot;,&quot;2015-08-24T17:05:03Z&quot;,&quot;2015-08-24T17:08:26Z&quot;,&quot;2015-08-24T17:08:44Z&quot;,&quot;2015-08-24T17:14:40Z&quot;,&quot;2015-08-24T18:55:15Z&quot;,&quot;2015-08-24T18:56:52Z&quot;,&quot;2015-08-24T20:19:08Z&quot;,&quot;2015-08-24T20:22:26Z&quot;,&quot;2015-08-24T20:48:20Z&quot;,&quot;2015-08-24T22:57:57Z&quot;,&quot;2015-08-24T23:02:13Z&quot;,&quot;2015-08-24T23:04:34Z&quot;,&quot;2015-08-24T23:26:19Z&quot;,&quot;2015-08-25T04:08:34Z&quot;,&quot;2015-08-25T21:57:39Z&quot;,&quot;2015-08-26T01:49:34Z&quot;,&quot;2015-08-26T21:30:51Z&quot;,&quot;2015-08-26T22:41:40Z&quot;]
+</pre></div>
 8 people submitted before class</p>
 <h1 id="-how-many-students-updated-their-comments-after-class">( How many students updated their comments after class )</h1>
 <p><pre>
-<span class="keyword">var</span> created = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+<span class="keyword">var</span> created = _.pluck(data.comments, <span class="string">&apos;updated_at&apos;</span>)
 <span class="keyword">var</span> time = _.map(created, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
 <span class="keyword">var</span> onTime = [<span class="string">&quot;2015-08-24T16:00:00Z&quot;</span>]
 <span class="keyword">var</span> onTimeSplit = _.map(onTime, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
