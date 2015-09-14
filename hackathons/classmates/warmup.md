@@ -3,14 +3,12 @@
 # Warmup
 
 As warmup, let's being with some simple questions.
-
 The comments data is imported as `data.comments`.
 
 ## How many people have submitted comments?
 
 {% lodash %}
-// TODO: write code to answer this question
-return 25
+return _.size(data.comments)
 {% endlodash %}
 
 There are {{result}} submissions.
@@ -20,8 +18,7 @@ There are {{result}} submissions.
 We can get the data of the first comment by
 
 {% lodash %}
-// TODO: use lodash's method instead of direct array access via [0]
-return data.comments[0]
+return _.first(data.comments)
 {% endlodash %}
 
 The result is
@@ -33,9 +30,7 @@ The person's name is {{ result.user.login }}.
 {% set name = result.user.login %}
 
 ## What is {{name}}'s favorite food?
-
 We will need to parse the comment to retrieve this data.
-
 The comment text is
 {{ result.body | json }}
 
@@ -43,12 +38,10 @@ The code to retrieve the data about the favorite food is (hint: use [split()](ht
 
 {% lodash %}
 var text = _.first(data.comments).body
-console.log(text)
-console.log(text.split('\n'))
+//console.log(text)
+//console.log(text.split('\n'))
 
-// TODO: add code to process text to get the person's favorite food
-
-return 'Sushi'
+return _.last(text.split ( 'Food:' ))
 {% endlodash %}
 
 So, {{name}}'s favorite food is {{result}}.

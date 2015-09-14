@@ -11,8 +11,7 @@
 {% svg %}
 
 <!-- barchart with five bars -->
-<rect x="0" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
-
+<rect x="10" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
 {% endsvg %}
 
 ## Top one

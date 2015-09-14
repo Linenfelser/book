@@ -1,27 +1,26 @@
-# Q: What is big data?
 
 * Find FOUR really big datasets. They should be sufficiently different. Cite your sources.
 * Discuss and determine a ranking in terms of "bigness".
 * Fill the template below. Replace all (( )) with your answers.
 
-## Rank 1: ((name of the dataset))
+## Rank 1: ((Stock Market))
 
-(( a brief description of the dataset))
+(( There is data of all sorts in the stock market. Data types such as names, value, money$$ ))
 
-((a brief justification why this dataset is bigger than the next one))
+(( We gave this the top rank because of the level of importance and the amount of trading and automated trading that takes place on a daily basis ))
 
-## Rank 2: ((name of the dataset))
+## Rank 2: (( Healt Care))
 
-(( a brief description of the dataset))
+(( Everybodys medical records ))
 
-((a brief justification why this dataset is bigger than the next one))
+(( We gave this number two because of its level of importance to not have any issues with ))
 
-## Rank 3: ((name of the dataset))
+## Rank 3: ((Search Engines ))
 
-(( a brief description of the dataset))
+(( Searches from everyone ))
 
-((a brief justification why this dataset is bigger than the next one))
+(( There are so many searches around the world on a daily basis that give this a top ranking big data set ))
 
-## Rank 4: ((name of the dataset))
+## Rank 4: (( Weather ))
 
-(( a brief description of the dataset))
+(( There is a vast amout of data collected evey day concernign current weather, past weather and weather patters in order to make predictions and a lot of other useful information ))
