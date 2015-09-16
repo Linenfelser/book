@@ -37,37 +37,67 @@ return percent
 
 {% lodash %}
 
-var bodies = _.pluck(data.comments, 'body')
-var cs = _.map(bodies, function( item){return _.last(item.split('Major:'))})
-var pythonC = 0
-for(var i=0; i<cs.length; i++){
-	if(cs[i].match('Python'))
-		pythonC++
-}return pythonC
+var language_string = ""
+for (i = 0; i < _.size(data.comments); i++) {
+    var text = data.comments[i].body
+    var languages
 
-var javaC = 0
-for(var i=0; i<cs.length; i++){
-	if(cs[i].match('Java'))
-		javaC++
-}//return javaC
+    function splitString(stringToSplit, separator) {
+        var arrayOfStrings = stringToSplit.split(separator)
+        var language_line = arrayOfStrings[2]
+        var line = language_line.split(':')
+        var favorite_language = line[1]
+        var splitline = favorite_language.split(" ")
 
-var javaScriptC = 0
-for(var i=0; i<cs.length; i++){
-	if(cs[i].match('Javascript'))
-		javaScriptC++
-}return javaScriptC
+        if (favorite_language != "") {
+            return (splitline[1])
+        }
+        else {
+            return 'false'
+        }
+    }
 
-var cC = 0
-for(var i=0; i<cs.length; i++){
-	if(cs[i].match('C') || cs[i].match('C++') | cs[i].match('C#') )
-		cC++
-}return cC
-console.log(cC)
+    languages = splitString(text, '\r\n')
+    if (languages == "JAVA") {languages = "Java"}
+    language_string += (_.capitalize(languages) + ',')
+}
+
+var array = language_string.split(',')
+var saved_array = language_string.split(',')
+var new_array = array
+var key = array[0].split()
+var found_keys = key + ','
+
+while (new_array.length > 1) {
+    new_array = _.difference(array, key)
+    array = new_array
+    key = new_array[0].split()
+    found_keys += (key + ',')
+}
+
+var sort_keys = found_keys.split(",")
+var answer = ""
+
+for (var i = 0; i < sort_keys.length; i++) {
+    if (sort_keys[i] != "") {
+    var count = 0
+        for (var j = 0; j < saved_array.length; j++) {
+            if(saved_array[j] == sort_keys[i]) { count++ }
+        }
+        answer += (sort_keys[i] + ':' + count + ' ')
+    }
+}
+
+return answer
+
+
+console.log(answer)
+
 
 
 {% endlodash %}
 
-The results are: {{results}}
+The results are: {{result}}
 
 # ( How many students submitted before the first class? ) 
 
@@ -76,7 +106,7 @@ The results are: {{results}}
 var created = _.pluck(data.comments, 'created_at')
 console.log(created)
 var time = _.map(created, function(item){return (item.split('-'))})
-var onTime = ["2015-08-24T16:00:00Z"]
+var onTime = ["2015-08-24T22:00:00Z"]
 var onTimeSplit = _.map(onTime, function(item){return (item.split('-'))})
 
 var counter = 0
@@ -100,7 +130,7 @@ return counter
 {% lodash %}
 var created = _.pluck(data.comments, 'updated_at')
 var time = _.map(created, function(item){return (item.split('-'))})
-var onTime = ["2015-08-24T16:00:00Z"]
+var onTime = ["2015-08-24T22:00:00Z"]
 var onTimeSplit = _.map(onTime, function(item){return (item.split('-'))})
 
 //console.log("=====================")

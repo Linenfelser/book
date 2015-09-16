@@ -19,30 +19,26 @@ including the controls, widgets ...etc.
 
 (write your answer based on the statistics you can find online)
 
-# (Question 1)
+# (Percent of studnetnts that are CS majors)
 
-![screenshot](screenshot.png)
+![screenshot](csVSnon.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+(As the chart shows, you can see there are 6 more cs majors than non-cs)
 
-# (Question 2)
+# (Whave are the favorite languages)
 
-![screenshot](screenshot.png)
+![screenshot](lang.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+(The size of the dots represents the popularity of the language among the students in this class)
 
-# (Question 3)
+# (How many sudents submittted before class?)
 
-![screenshot](screenshot.png)
+![screenshot](sub.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+(Same as below: This is because I graphed this question and the next one together in order to show the amount that submitted after and before class)
 
-# (Question 4)
+# (How many updated their comments after class?)
 
-![screenshot](screenshot.png)
+![screenshot](sub.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+(ame as above: This is because I graphed this question and the next one together in order to show the amount that submitted after and before class)
