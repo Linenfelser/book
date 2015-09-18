@@ -46,7 +46,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3.2" data-basepath="../.." data-revision="Wed Sep 16 2015 12:54:50 GMT-0600 (MDT)">
+    <div class="book" data-level="2.3.2" data-basepath="../.." data-revision="Fri Sep 18 2015 14:29:04 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -661,10 +661,51 @@ the following questions. Each member on our team is reponsible for one question.
 <p><pre>
 <span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
 </pre></p>
-<h1 id="-question-5-by-name">(Question 5) by (Name)</h1>
+<h1 id="-which-course-level-has-the-lowest-retention-by-andrew">(Which course level has the lowest retention?) by (Andrew)</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+
+<span class="keyword">var</span> level = _.groupBy(data, <span class="string">&apos;Level&apos;</span>)
+<span class="keyword">var</span> ret = _.pairs(_.mapValues(level, <span class="keyword">function</span>(d){<span class="keyword">return</span> (_.sum(_.pluck(d, <span class="string">&apos;PCT.WDRAW&apos;</span>))/d.length)*<span class="number">100</span>}))
+<span class="keyword">return</span> _.sortBy(ret, <span class="keyword">function</span>(d){<span class="keyword">return</span> d[<span class="number">1</span>]})
+
+
 </pre></p>
+<table>
+
+    <tr>
+        <td>Doctoral</td>
+        <td>0.624203821656051</td>
+    </tr>
+
+    <tr>
+        <td>Masters</td>
+        <td>0.9690082644628096</td>
+    </tr>
+
+    <tr>
+        <td>Upper</td>
+        <td>2.6322160148975833</td>
+    </tr>
+
+    <tr>
+        <td>Lower</td>
+        <td>3.724106739032116</td>
+    </tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     
                     </section>
