@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Wed Sep 16 2015 12:54:50 GMT-0600 (MDT)">
+    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Fri Sep 18 2015 14:29:04 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -1033,14 +1033,15 @@
 
 <h2 id="what-subset-of-these-subject-codes-have-more-than-5000-total-enrollments">What subset of these subject codes have more than 5000 total enrollments?</h2>
 <p><pre>
-<span class="keyword">var</span> grps = _.groupBy(data, <span class="string">&apos;Subject&apos;</span>)
-<span class="keyword">var</span> enroll = _.pick(_.mapValues(grps, <span class="keyword">function</span>(d){<span class="keyword">return</span> d.ENROLL}), <span class="keyword">function</span>(x){
-    <span class="keyword">return</span> _.sum(enroll) &gt; <span class="number">5000</span>
-})
-<span class="keyword">return</span> enroll
 
 
-<span class="comment">// TODO: replace with code that computes the actual result</span>
+<span class="keyword">var</span> groups = _.groupBy(data, <span class="string">&apos;Subject&apos;</span>)
+<span class="keyword">var</span> stuff =  _.pick(_.mapValues(groups, <span class="keyword">function</span>(d){<span class="keyword">return</span> _.sum(_.pluck(d, <span class="string">&apos;N.ENROLL&apos;</span>))}, <span class="keyword">function</span>(a){<span class="keyword">return</span> a &gt; <span class="number">5000</span>}))
+<span class="keyword">return</span> stuff
+<span class="comment">//console.log(stuff)</span>
+
+
+
 <span class="comment">//return {&quot;IPHY&quot;: 5507,&quot;MATH&quot;: 8725,&quot;PHIL&quot;: 5672,&quot;PHYS&quot;: 8099,&quot;PSCI&quot;: 5491}</span>
 </pre></p>
 <table>
@@ -1049,8 +1050,14 @@
 
 <h2 id="what-are-the-course-numbers-of-the-courses-tom-pei-hsiu-yeh-taught">What are the course numbers of the courses Tom (PEI HSIU) Yeh taught?</h2>
 <p><pre>
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">return</span> [<span class="string">&apos;4830&apos;</span>,<span class="string">&apos;4830&apos;</span>]
+
+<span class="keyword">return</span> _.pluck(_.filter(data, <span class="keyword">function</span>(d){
+    <span class="keyword">var</span> name = _.pluck(d.Instructors, <span class="string">&apos;name&apos;</span>)
+    <span class="keyword">return</span> name == <span class="string">&apos;YEH, PEI HSIU&apos;</span>
+}), <span class="string">&apos;Course&apos;</span>)
+
+
+<span class="comment">//return [&apos;4830&apos;,&apos;4830&apos;]</span>
 </pre></p>
 <p>They are 4830,4830.</p>
 

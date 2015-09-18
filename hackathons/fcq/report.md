@@ -33,8 +33,35 @@ return "[answer]"
 return "[answer]"
 {% endlodash %}
 
-# (Question 5) by (Name)
+# (Which course level has the lowest retention?) by (Andrew)
 
 {% lodash %}
-return "[answer]"
+
+var level = _.groupBy(data, 'Level')
+var ret = _.pairs(_.mapValues(level, function(d){return (_.sum(_.pluck(d, 'PCT.WDRAW'))/d.length)*100}))
+return _.sortBy(ret, function(d){return d[1]})
+
+
 {% endlodash %}
+
+<table>
+{% for key, value in result %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+

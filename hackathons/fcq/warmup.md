@@ -69,14 +69,15 @@ return {"IPHY": 134,"MATH": 232,"MCDB": 117,"PHIL": 160,"PSCI": 117}
 ## What subset of these subject codes have more than 5000 total enrollments?
 
 {% lodash %}
-var grps = _.groupBy(data, 'Subject')
-var enroll = _.pick(_.mapValues(grps, function(d){return d.ENROLL}), function(x){
-    return _.sum(enroll) > 5000
-})
-return enroll
 
 
-// TODO: replace with code that computes the actual result
+var groups = _.groupBy(data, 'Subject')
+var stuff =  _.pick(_.mapValues(groups, function(d){return _.sum(_.pluck(d, 'N.ENROLL'))}, function(a){return a > 5000}))
+return stuff
+//console.log(stuff)
+
+
+
 //return {"IPHY": 5507,"MATH": 8725,"PHIL": 5672,"PHYS": 8099,"PSCI": 5491}
 {% endlodash %}
 
@@ -92,8 +93,14 @@ return enroll
 ## What are the course numbers of the courses Tom (PEI HSIU) Yeh taught?
 
 {% lodash %}
-// TODO: replace with code that computes the actual result
-return ['4830','4830']
+
+return _.pluck(_.filter(data, function(d){
+    var name = _.pluck(d.Instructors, 'name')
+    return name == 'YEH, PEI HSIU'
+}), 'Course')
+
+
+//return ['4830','4830']
 {% endlodash %}
 
 They are {{result}}.
