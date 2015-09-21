@@ -77,7 +77,6 @@ return stuff
 //console.log(stuff)
 
 
-
 //return {"IPHY": 5507,"MATH": 8725,"PHIL": 5672,"PHYS": 8099,"PSCI": 5491}
 {% endlodash %}
 

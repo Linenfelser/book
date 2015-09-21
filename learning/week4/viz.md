@@ -19,37 +19,34 @@ how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.
 
-# (Question 1)
+# Question 1: How does retention compare across departments? (by Zach)
 
-![screenshot](screenshot.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](Q1.png)
 
-# (Question 2)
+You can look in the upper left corner and lower right corner to see the highest and lowest retentions
 
-![screenshot](screenshot.png)
+# Question 2: What is the ranking of Departments within the College of Engineering & Applied Sciences, based on average course rating and average instructor rating? (by Kevin)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](Q2.png)
 
-# (Question 3)
+The rankings are graphed
 
-![screenshot](screenshot.png)
+# Question 3: What is the distribution of instructor type (e.g., Lecturer, Assistant Professor, Instructor) across departments? (by Karen) 
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](Q3.png)
 
-# (Question 4)
+The height of the bar represents the number of people
 
-![screenshot](screenshot.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+# Question 4: What is the easist grade? (by John)
+![screenshot](Q4.png)
 
-# (Question 5)
+All the classes listed are "easy A"classes
 
-![screenshot](screenshot.png)
+# Question 5: Which course level has the lowest retention?) by (Andrew)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    
+![screenshot](Q5.png)
+
+The smallest bubble has the lowest withdrawl rate across divsions. 
+  
