@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Mon Sep 21 2015 15:41:37 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Wed Sep 23 2015 14:05:25 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -697,69 +803,36 @@
 <p>After completing the warmup exercises, your task is to do four more slightly
 more challenges analyses.</p>
 <h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
-<p><pre>
-<span class="keyword">var</span> bodies = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
-<span class="keyword">var</span> food = _.map(bodies, <span class="keyword">function</span>( item){<span class="keyword">return</span> _.last(item.split(<span class="string">&apos;Food:&apos;</span>))})
-<span class="keyword">var</span> counter = <span class="number">0</span>
-<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;food.length; i++){
-    <span class="keyword">if</span>((food[i].match(<span class="string">&apos;Sushi&apos;</span>)) || food[i].match(<span class="string">&apos;sushi&apos;</span>)) 
-        counter++
-}
-<span class="keyword">return</span> counter
-
-</pre></p>
+<p><pre><code>var bodies = _.pluck(data.comments, &apos;body&apos;)
+var food = _.map(bodies, function( item){return _.last(item.split(&apos;Food:&apos;))})
+var counter = 0
+for(var i=0; i<food.length; i++){="" if((food[i].match('Sushi'))="" ||="" food[i].match('sushi'))="" counter++="" }="" return="" counter<="" code=""></food.length;></code></pre></p>
 <p>The answer is 5.</p>
 <h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
-<p><pre>
-<span class="keyword">var</span> python = _.filter(data.comments, <span class="keyword">function</span>(py){ <span class="keyword">return</span> _.includes(py.body, <span class="string">&quot;Python&quot;</span>); })
-<span class="keyword">var</span> bodiesPython = _.pluck(python, <span class="string">&apos;body&apos;</span>)
+<p><pre><code>var python = _.filter(data.comments, function(py){ return _.includes(py.body, &quot;Python&quot;); })
+var bodiesPython = _.pluck(python, &apos;body&apos;)
 
-<span class="keyword">var</span> myArray = []
-<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;bodiesPython.length; i++){
-    <span class="keyword">var</span> name = _.first(bodiesPython[i].split(<span class="string">&apos;\r\n&apos;</span>))
-    <span class="comment">//console.log(name)</span>
-    myArray.push(name)
-}
-<span class="keyword">return</span> myArray
-
-</pre></p>
+var myArray = []
+for(i=0; i<bodiesPython.length; i++){="" var="" name="_.first(bodiesPython[i].split(&apos;\r\n&apos;))" console.log(name)="" myArray.push(name)="" }="" return="" myArray<="" code=""></bodiesPython.length;></code></pre></p>
 <p>Their names are Name: William Farmer,Name: Heather Witte,Name: Zach Lamb,Name: Zhili Yang,Name: John Cronk,Name: Denis Kazakov,Name: Caleb Hsu,Name: Karen Blakemore,Name: Sanketh S Shetty,Name: Andrey Shprengel.</p>
 <h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
-<p><pre>
-<span class="keyword">var</span> bodies = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
-<span class="keyword">var</span> whichOne = _.map(bodies, <span class="keyword">function</span>(item){<span class="keyword">return</span> _.last(item.split(<span class="string">&apos;Language:&apos;</span>))})
-<span class="keyword">var</span> counterJava = <span class="number">0</span>
-<span class="keyword">var</span> counterScript = <span class="number">0</span>
-<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;whichOne.length; i++){
-    <span class="keyword">if</span>(whichOne[i].match(<span class="string">&apos;Java\r&apos;</span>) || whichOne[i].match(<span class="string">&apos;java\r&apos;</span>) || whichOne[i].match(<span class="string">&apos;JAVA\r&apos;</span>)) 
-        counterJava++
-    <span class="keyword">if</span>(whichOne[i].match(<span class="string">&apos;Javascript&apos;</span>) || whichOne[i].match(<span class="string">&apos;javascript&apos;</span>))
-        counterScript++	
-}
-<span class="keyword">if</span>(counterJava &gt; counterScript)
-    <span class="keyword">return</span> <span class="string">&apos;Java&apos;</span>
+<p><pre><code>var bodies = _.pluck(data.comments, &apos;body&apos;)
+var whichOne = _.map(bodies, function(item){return _.last(item.split(&apos;Language:&apos;))})
+var counterJava = 0
+var counterScript = 0
+for(var i=0; i<whichOne.length; i++){="" if(whichOne[i].match('Java\r')="" ||="" whichOne[i].match('java\r')="" whichOne[i].match('JAVA\r'))="" counterJava++="" if(whichOne[i].match('Javascript')="" whichOne[i].match('javascript'))="" counterScript++="" }="" if(counterJava=""> counterScript)
+	return &apos;Java&apos;
 
-<span class="keyword">if</span>(counterJava &lt; counterScript)
-    <span class="keyword">return</span> <span class="string">&apos;Javascript&apos;</span>
-<span class="keyword">else</span> <span class="keyword">return</span> <span class="string">&apos;The same&apos;</span>
-
-</pre></p>
+if(counterJava &lt; counterScript)
+	return &apos;Javascript&apos;
+else return &apos;The same&apos;</whichOne.length;></code></pre></p>
 <p>The answer is Java.</p>
 <h2 id="who-likes-the-same-food-as-kjblakemore">Who likes the same food as <code>kjblakemore</code>?</h2>
-<p><pre>
-<span class="keyword">var</span> kjb = _.filter(_.pluck(data.comments, <span class="string">&apos;body&apos;</span>), <span class="keyword">function</span>(text){<span class="keyword">return</span> _.includes(text, <span class="string">&apos;Vegan&apos;</span>)})
-<span class="comment">//console.log(kjb)</span>
-<span class="keyword">var</span> names = _.map(kjb, <span class="keyword">function</span>(n){<span class="keyword">return</span> _.last(n.split(<span class="string">&apos;Name:&apos;</span>))})
-<span class="keyword">var</span> myArray = []
-<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;names.length; i++){
-    <span class="keyword">var</span> name = _.first(names[i].split(<span class="string">&apos;\r\n&apos;</span>))
-    myArray.push(name)
-}
-<span class="keyword">return</span> myArray
-
-
-
-</pre>
+<p><pre><code>var kjb = _.filter(_.pluck(data.comments, &apos;body&apos;), function(text){return _.includes(text, &apos;Vegan&apos;)})
+//console.log(kjb)
+var names = _.map(kjb, function(n){return _.last(n.split(&apos;Name:&apos;))})
+var myArray = []
+for(i=0; i<names.length; i++){="" var="" name="_.first(names[i].split(&apos;\r\n&apos;))" myArray.push(name)="" }="" return="" myArray<="" code=""></names.length;></code></pre>
 The people who like the same food as kjblakemore are:  Karen Blakemore.</p>
 
                     
@@ -783,11 +856,15 @@ The people who like the same food as kjblakemore are:  Karen Blakemore.</p>
 <script src="../../gitbook/app.js"></script>
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
     
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
     
 
 <script>

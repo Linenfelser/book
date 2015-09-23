@@ -6,53 +6,48 @@ bird strikes.
 # Authors
 
 This report is prepared by
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
+* [Caleb Hsu](https://github.com/calebhsu/)
+* [Andrew Linenfelser](https://github.com/Linenfelser)
+* [Zhili Yang](https://github.com/zhya215)
+* [Andrey Shprengel](https://github.com/AndreyShprengel)
+* [Andrew Berumen](https://github.com/anbe6083)
 
-# (Question 1)
 
-This question was asked by (student's github id).
+# (How many flights have been cancelled by birdstrikes?)
 
-![screenshot](screenshot.png)
+This question was asked by pail4944
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](canceled.png)
 
-# (Question 2)
+The graph indicates the number of occurrences and the type of cancellation that occured.
 
-This question was asked by (student's github id).
 
-![screenshot](screenshot.png)
+# (What are the top 5 bird species?)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+This question was asked by ZachLamb
 
-# (Question 3)
+![screenshot](top5species.png)
 
-This question was asked by (student's github id).
+The largest bubbles indicate the greatest number of occurences of a particular species in the birdstrike. The number below each species indicates the average cost in hours incurred by said species.
 
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 4)
+# (What states cost the airlines the most money? (Cost and location))
 
 This question was asked by (student's github id).
 
-![screenshot](screenshot.png)
+![screenshot](Most_money_birdstrike.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+I graphed the number of bird strikes according to origin state, along with the sum of total costs of damage due to birdstrikes
 
-# (Question 5)
+# What is the most common flight phase where a birdstrike occurred (KevinKGifford).
 
-This question was asked by (student's github id).
+![screenshot](whatphaseofflight.PNG)
 
-![screenshot](screenshot.png)
+(This is a pie chart the represents what portion of the birdstrikes happened during each phase.
+The legend in on the right the most common was approach)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    
+
+# What type of aircraft has the most instances of damaged caused by bird strikes? (nicolele).
+Answered by Zhili Yang
+
+![screenshot](type_of_aircraft.png)
+Airplane is the type with the most instances of damaged caused.

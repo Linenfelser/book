@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Mon Sep 21 2015 15:41:37 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Wed Sep 23 2015 14:05:25 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -702,104 +808,77 @@
 on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
 the following:</p>
 <h1 id="-percent-of-students-that-are-cs-majors">(Percent of students that are CS majors)</h1>
-<p><pre>
-<span class="keyword">var</span> bodies = _.pluck(data.comments, <span class="string">&apos;body&apos;</span>)
-<span class="keyword">var</span> cs = _.map(bodies, <span class="keyword">function</span>( item){<span class="keyword">return</span> _.last(item.split(<span class="string">&apos;Major:&apos;</span>))})
-<span class="keyword">var</span> counter = <span class="number">0</span>
-<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;cs.length; i++){
-    <span class="keyword">if</span>(cs[i].match(<span class="string">&apos;Computer Science&apos;</span>))
-        counter++
-}
-<span class="keyword">var</span> percent = (counter/cs.length) * <span class="number">100</span>
-<span class="keyword">return</span> percent
-
-</pre>
+<p><pre><code>var bodies = _.pluck(data.comments, &apos;body&apos;)
+var cs = _.map(bodies, function( item){return _.last(item.split(&apos;Major:&apos;))})
+var counter = 0
+for(var i=0; i<cs.length; 100="" i++){="" if(cs[i].match('Computer="" Science'))="" counter++="" }="" var="" percent="(counter/cs.length)" *="" return="" percent<="" code=""></cs.length;></code></pre>
 61.53846153846154 % of the people are Computer Science people</p>
 <h1 id="-what-are-the-favorite-languages">(What are the favorite languages?)</h1>
-<p><pre>
+<p><pre><code>var language_string = &quot;&quot;
+for (i = 0; i &lt; _.size(data.comments); i++) {
+    var text = data.comments[i].body
+    var languages
 
-<span class="keyword">var</span> language_string = <span class="string">&quot;&quot;</span>
-<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; _.size(data.comments); i++) {
-    <span class="keyword">var</span> text = data.comments[i].body
-    <span class="keyword">var</span> languages
+    function splitString(stringToSplit, separator) {
+        var arrayOfStrings = stringToSplit.split(separator)
+        var language_line = arrayOfStrings[2]
+        var line = language_line.split(&apos;:&apos;)
+        var favorite_language = line[1]
+        var splitline = favorite_language.split(&quot; &quot;)
 
-    <span class="keyword">function</span> splitString(stringToSplit, separator) {
-        <span class="keyword">var</span> arrayOfStrings = stringToSplit.split(separator)
-        <span class="keyword">var</span> language_line = arrayOfStrings[<span class="number">2</span>]
-        <span class="keyword">var</span> line = language_line.split(<span class="string">&apos;:&apos;</span>)
-        <span class="keyword">var</span> favorite_language = line[<span class="number">1</span>]
-        <span class="keyword">var</span> splitline = favorite_language.split(<span class="string">&quot; &quot;</span>)
-
-        <span class="keyword">if</span> (favorite_language != <span class="string">&quot;&quot;</span>) {
-            <span class="keyword">return</span> (splitline[<span class="number">1</span>])
+        if (favorite_language != &quot;&quot;) {
+            return (splitline[1])
         }
-        <span class="keyword">else</span> {
-            <span class="keyword">return</span> <span class="string">&apos;false&apos;</span>
+        else {
+            return &apos;false&apos;
         }
     }
 
-    languages = splitString(text, <span class="string">&apos;\r\n&apos;</span>)
-    <span class="keyword">if</span> (languages == <span class="string">&quot;JAVA&quot;</span>) {languages = <span class="string">&quot;Java&quot;</span>}
-    language_string += (_.capitalize(languages) + <span class="string">&apos;,&apos;</span>)
+    languages = splitString(text, &apos;\r\n&apos;)
+    if (languages == &quot;JAVA&quot;) {languages = &quot;Java&quot;}
+    language_string += (_.capitalize(languages) + &apos;,&apos;)
 }
 
-<span class="keyword">var</span> <span class="keyword">array</span> = language_string.split(<span class="string">&apos;,&apos;</span>)
-<span class="keyword">var</span> saved_array = language_string.split(<span class="string">&apos;,&apos;</span>)
-<span class="keyword">var</span> new_array = <span class="keyword">array</span>
-<span class="keyword">var</span> key = <span class="keyword">array</span>[<span class="number">0</span>].split()
-<span class="keyword">var</span> found_keys = key + <span class="string">&apos;,&apos;</span>
+var array = language_string.split(&apos;,&apos;)
+var saved_array = language_string.split(&apos;,&apos;)
+var new_array = array
+var key = array[0].split()
+var found_keys = key + &apos;,&apos;
 
-<span class="keyword">while</span> (new_array.length &gt; <span class="number">1</span>) {
-    new_array = _.difference(<span class="keyword">array</span>, key)
-    <span class="keyword">array</span> = new_array
-    key = new_array[<span class="number">0</span>].split()
-    found_keys += (key + <span class="string">&apos;,&apos;</span>)
+while (new_array.length &gt; 1) {
+    new_array = _.difference(array, key)
+    array = new_array
+    key = new_array[0].split()
+    found_keys += (key + &apos;,&apos;)
 }
 
-<span class="keyword">var</span> sort_keys = found_keys.split(<span class="string">&quot;,&quot;</span>)
-<span class="keyword">var</span> answer = <span class="string">&quot;&quot;</span>
+var sort_keys = found_keys.split(&quot;,&quot;)
+var answer = &quot;&quot;
 
-<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; sort_keys.length; i++) {
-    <span class="keyword">if</span> (sort_keys[i] != <span class="string">&quot;&quot;</span>) {
-    <span class="keyword">var</span> count = <span class="number">0</span>
-        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; saved_array.length; j++) {
-            <span class="keyword">if</span>(saved_array[j] == sort_keys[i]) { count++ }
+for (var i = 0; i &lt; sort_keys.length; i++) {
+    if (sort_keys[i] != &quot;&quot;) {
+    var count = 0
+        for (var j = 0; j &lt; saved_array.length; j++) {
+            if(saved_array[j] == sort_keys[i]) { count++ }
         }
-        answer += (sort_keys[i] + <span class="string">&apos;:&apos;</span> + count + <span class="string">&apos; &apos;</span>)
+        answer += (sort_keys[i] + &apos;:&apos; + count + &apos; &apos;)
     }
 }
 
-<span class="keyword">return</span> answer
+return answer
 
 
-console.log(answer)
-
-
-
-</pre></p>
+console.log(answer)</code></pre></p>
 <p>The results are: Python:10 Javascript:2 C:6 Java:4 Haskell:1 C++:2 C#:1 </p>
 <h1 id="-how-many-students-submitted-before-the-first-class">( How many students submitted before the first class? )</h1>
-<p><pre>
-<span class="keyword">var</span> created = _.pluck(data.comments, <span class="string">&apos;created_at&apos;</span>)
+<p><pre><code>var created = _.pluck(data.comments, &apos;created_at&apos;)
 console.log(created)
-<span class="keyword">var</span> time = _.map(created, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
-<span class="keyword">var</span> onTime = [<span class="string">&quot;2015-08-24T22:00:00Z&quot;</span>]
-<span class="keyword">var</span> onTimeSplit = _.map(onTime, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
+var time = _.map(created, function(item){return (item.split(&apos;-&apos;))})
+var onTime = [&quot;2015-08-24T22:00:00Z&quot;]
+var onTimeSplit = _.map(onTime, function(item){return (item.split(&apos;-&apos;))})
 
-<span class="keyword">var</span> counter = <span class="number">0</span>
-<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;time.length; i++){
-    <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;time[i].length; j++){
-        <span class="keyword">if</span>(time[i][j] &lt; onTimeSplit[<span class="number">0</span>][j]){
-            <span class="comment">//console.log(&quot;ON TIME!!!!!&quot;)</span>
-            counter++
-            
-        }
-    }
-}
-<span class="comment">//console.log(counter)</span>
-<span class="keyword">return</span> counter
-
-</pre><div class="console">console&gt; [
+var counter = 0
+for(i=0; i<time.length; i++){="" for(j="0;" j<time[i].length;="" j++){="" if(time[i][j]="" <="" onTimeSplit[0][j]){="" console.log("ON="" TIME!!!!!")="" counter++="" }="" console.log(counter)="" return="" counter<="" code=""></time.length;></code></pre><div class="console">console&gt; [
  &quot;2015-08-20T22:39:50Z&quot;,
  &quot;2015-08-21T00:32:27Z&quot;,
  &quot;2015-08-21T21:44:26Z&quot;,
@@ -830,26 +909,22 @@ console.log(created)
 </div>
 17 people submitted before class</p>
 <h1 id="-how-many-students-updated-their-comments-after-class">( How many students updated their comments after class )</h1>
-<p><pre>
-<span class="keyword">var</span> created = _.pluck(data.comments, <span class="string">&apos;updated_at&apos;</span>)
-<span class="keyword">var</span> time = _.map(created, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
-<span class="keyword">var</span> onTime = [<span class="string">&quot;2015-08-24T22:00:00Z&quot;</span>]
-<span class="keyword">var</span> onTimeSplit = _.map(onTime, <span class="keyword">function</span>(item){<span class="keyword">return</span> (item.split(<span class="string">&apos;-&apos;</span>))})
+<p><pre><code>var created = _.pluck(data.comments, &apos;updated_at&apos;)
+var time = _.map(created, function(item){return (item.split(&apos;-&apos;))})
+var onTime = [&quot;2015-08-24T22:00:00Z&quot;]
+var onTimeSplit = _.map(onTime, function(item){return (item.split(&apos;-&apos;))})
 
-<span class="comment">//console.log(&quot;=====================&quot;)</span>
-<span class="comment">//console.log(onTimeSplit)</span>
+//console.log(&quot;=====================&quot;)
+//console.log(onTimeSplit)
 
-<span class="keyword">var</span> counter = <span class="number">0</span>
-<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;time.length; i++){
-    <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;time[i].length; j++){
-        <span class="keyword">if</span>(time[i][j] &gt; onTimeSplit[<span class="number">0</span>][j]){
-            <span class="comment">//console.log(&quot;NOT ON TIME!!!!!&quot;)</span>
-            counter++
-        }
-    }
+var counter = 0
+for(i=0; i<time.length; i++){="" for(j="0;" j<time[i].length;="" j++){="" if(time[i][j]=""> onTimeSplit[0][j]){
+			//console.log(&quot;NOT ON TIME!!!!!&quot;)
+			counter++
+		}
+	}
 }
-<span class="keyword">return</span> counter
-</pre></p>
+return counter</time.length;></code></pre></p>
 <p>10 people updated after</p>
 
                     
@@ -873,11 +948,15 @@ console.log(created)
 <script src="../../gitbook/app.js"></script>
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
     
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
     
 
 <script>
