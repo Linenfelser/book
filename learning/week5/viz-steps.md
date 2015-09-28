@@ -129,7 +129,7 @@ function computeX(d, i) {
 
 function computeHeight(d, i){
 
-    return (d['pop']/200000000)*50
+    return (d['pop']/3484459)
 }
 
 data.viz = _.map(data.countries, function(d, i){
@@ -196,12 +196,12 @@ function computeX(d, i) {
 
 function computeHeight(d, i){
     
-    return(d['pop']/200000000) *50
+    return (d['pop']/3484459)
 }
 
 function computeWidth(d, i){
 
-    return(d['pop']/200000000) *10
+    return (d['pop']/20199765.74)
 }
 // TODO: add a new mapper function for width
 
