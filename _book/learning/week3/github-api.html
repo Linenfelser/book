@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-bigdata/jquery.jsonview.css">
+        
+    
+        
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
         
     
@@ -52,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.4.1" data-basepath="../.." data-revision="Wed Sep 23 2015 14:05:25 GMT-0600 (MDT)">
+    <div class="book" data-level="1.4.1" data-basepath="../.." data-revision="Mon Sep 28 2015 00:06:37 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -439,6 +443,21 @@
                             <b>1.6.3.</b>
                         
                         Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="learning/week5/viz-pokemon.html">
+            
+                
+                    <a href="../../learning/week5/viz-pokemon.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.4.</b>
+                        
+                        Viz Pokemon
                     </a>
             
             
@@ -968,17 +987,17 @@ return data</div></div></p>
 <p>Now it&apos;s your turn to answer the following questions using the real data.</p>
 <h3 id="how-many-issues-have-been-created-to-date-in-our-class-s-forum-repository">How many issues have been created to date in our class&apos;s forum repository?</h3>
 <p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/repos/bigdatahci2015/forum/issues</div></div></p>
-<p>there are 19 issues in the forum</p>
+<p>there are 22 issues in the forum</p>
 <p><pre><code>return _.pluck(data, &apos;title&apos;)</code></pre></p>
 <h3 id="what-are-the-titles-of-these-issues">What are the titles of these issues?</h3>
-<p>the titles are: Which Airports had the most incidents of aircraft being damaged?,Questions for the Birdstrike Hackathon,Corrupt file in .git,Converting JSON to Tableau ready (on OSX),Week 4 Learning Challenge ,Your FCQ question,Everyone&apos;s book,This week&apos;s challenge and next week&apos;s hackathon,Week 3 Learning Challenge Updated / Posted,Tableau,lodash variables,Week 2 Learning Challenge Updated / Posted,Week 2 Team Learning Clarification,Knowing Your Classmates Hackathon,Problems uploading book to github.io,Hackathons,First Learning Challenge (Update),Learning challenges,Introduction</p>
+<p>the titles are: serving gitbook&apos;s specific pages,Tried to push and could not upload birdstrikes.json,Viz drills are posted,Which Airports had the most incidents of aircraft being damaged?,Questions for the Birdstrike Hackathon,Corrupt file in .git,Converting JSON to Tableau ready (on OSX),Week 4 Learning Challenge ,Your FCQ question,Everyone&apos;s book,This week&apos;s challenge and next week&apos;s hackathon,Week 3 Learning Challenge Updated / Posted,Tableau,lodash variables,Week 2 Learning Challenge Updated / Posted,Week 2 Team Learning Clarification,Knowing Your Classmates Hackathon,Problems uploading book to github.io,Hackathons,First Learning Challenge (Update),Learning challenges,Introduction</p>
 <h3 id="how-many-repository-have-been-created-to-date-for-our-class">How many repository have been created to date for our class?</h3>
 <p>Our class&apos;s Github organization is <a href="https://github.com/bigdatahci2015/" target="_blank">bigdatahci2015</a>.</p>
 <p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/orgs/bigdatahci2015/repos</div></div></p>
 <p>There are 5 repos</p>
 <p><pre><code>return _.pluck(data, &apos;forks&apos;)</code></pre></p>
 <h3 id="what-are-the-fork-counts-of-our-class-s-repositories">What are the fork counts of our class&apos;s repositories?</h3>
-<p>The fork count is: 4,2,26,31,1</p>
+<p>The fork count is: 4,2,25,32,2</p>
 <h3 id="how-many-public-repositories-does-the-user-doubleshow-have">How many public repositories does the user <code>doubleshow</code> have?</h3>
 <p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/users/doubleshow/repos</div></div>
 doubleshow has 30 repos </p>
@@ -1015,7 +1034,15 @@ doubleshow has 30 repos </p>
     
 
     
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/jquery.jsonview.js"></script>
+    
+
+    
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>
