@@ -21,23 +21,33 @@ var groups = _.groupBy(data, function(d){
     return d['CrsPBAColl']
 })
 
+var size  = _.mapValues(groups, function(d){
+    return _.size(d)})
+
+var counts = _.map(size, function(value, key){
+    return {'name': key, 'count': value}
+
+})
+
+//console.log(myArray)
+
 // TODO: add real code to convert groups (which is an object) into an array like below
 // This array should have a lot more elements.
-var counts = [{"name": "AS","count": 3237},
-    {"name": "BU","count": 378},
-    {"name": "EB","count": 139},
-    {"name": "EN","count": 573}]
+//var counts = [{"name": "AS","count": 3237},
+//    {"name": "BU","count": 378},
+//    {"name": "EB","count": 139},
+//    {"name": "EN","count": 573}]
 
 console.log(counts)
 
 // TODO: modify the code below to produce a nice vertical bar charts
 
 function computeX(d, i) {
-    return 0
+    return i * 20
 }
 
 function computeHeight(d, i) {
-    return 20
+    return d.count/10
 }
 
 function computeWidth(d, i) {
@@ -45,7 +55,7 @@ function computeWidth(d, i) {
 }
 
 function computeY(d, i) {
-    return 20 * i
+    return 327 - computeHeight(d,i)
 }
 
 function computeColor(d, i) {
@@ -71,10 +81,10 @@ return result.join('\n')
 
 {% template %}
 
-<rect x="0"
+<rect x="${d.x}"
       y="${d.y}"
-      height="20"
-      width="${d.width}"
+      height="${d.height}"
+      width="20"
       style="fill:${d.color};
              stroke-width:3;
              stroke:rgb(0,0,0)" />
