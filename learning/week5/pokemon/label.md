@@ -121,7 +121,7 @@ return result.join('\n')
 
 {% template %}
 
-<g transform="translate(120 ${d.y})">
+<g transform="translate(0 ${d.y})">
     <rect 
          title="${d.name}"        
          width="${d.width}"
